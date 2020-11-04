@@ -1,0 +1,50 @@
+<div id="page-home">
+
+  <mat-toolbar>
+    <img>
+    <div class="button-container">
+      <button class="signin" mat-raised-button routerLink="">ENTRAR</button>
+      <button class="signup" mat-raised-button routerLink="">CADASTRAR-SE</button>
+    </div>
+  </mat-toolbar>
+
+  <div class="banner"></div>
+
+  <section class="cards">
+    <div class="card-container">
+      <mat-card *ngFor="let product of products">
+        <button class="marker" [ngStyle]="{background: product.color}"></button>
+        <h1 [ngStyle]="{color: product.color}">{{product.title | uppercase}}</h1>
+        <p>{{product.text}}</p>
+        <button mat-raised-button class="product-button" [ngStyle]="{color: product.color}">
+          Saiba Mais
+        </button>
+      </mat-card>
+    </div>
+  </section>
+
+  <section class="signup-container">
+    <div class="signup-content">
+      <h1>Ainda não é assinante?</h1>
+      <p>Cadastre-se gratuitamente e descubra como vários de profissionais da área da
+        saúde estão aprimorando seus estudos através do método inovador SimSave.</p>
+      <button class="signup-button" mat-raised-button routerLink=""> Cadastre-se </button>
+    </div>
+  </section>
+
+  <section class="footer">
+    <div class="footer-content">
+      <img class="footer-logo" src="../../../assets/images/Grupo 139.svg">
+      <img src="../../../assets/images/Grupo 767.svg">
+
+      <div class="info-wrapper">
+        <div class="info">
+          <img src="../../../assets/images/Grupo 182.svg">
+          <span>Fale Conosco</span>
+        </div>
+        <p>Dúvida, crítica sugestão ou elogio? Envie<br />
+          um e-mail para suporte@simsave.com.br</p>
+      </div>
+    </div>
+  </section>
+</div>
