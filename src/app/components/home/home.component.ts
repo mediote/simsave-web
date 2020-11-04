@@ -1,4 +1,7 @@
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
+import Product from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -8,7 +11,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class HomeComponent implements OnInit {
 
-  products: [];
+  products$: Observable<Product[]>;
 
   constructor(private productService: ProductService) { }
 
@@ -17,8 +20,7 @@ export class HomeComponent implements OnInit {
   }
 
   list(): void {
-    this.productService.list().subscribe(products => {
-      this.products = products;
-    });
+    this.products$ = this.productService.list();
   }
+
 }

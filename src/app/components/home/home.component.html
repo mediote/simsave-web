@@ -7,7 +7,7 @@
       <button class="signup" mat-raised-button routerLink="">CADASTRAR-SE</button>
     </div>
   </mat-toolbar>
-  <picture >
+  <picture>
     <source media="(max-width: 682px)" srcset="../../../assets/images/BannerMobile.svg">
     <source media="(min-width: 800px)" srcset="../../../assets/images/banner.svg">
     <img class="banner" src="../../../assets/images/banner.svg" alt="Chris standing up holding his daughter Elva">
@@ -15,15 +15,13 @@
 
   <section class="cards">
     <div class="card-container">
-      <mat-card *ngFor="let product of products">
+      <mat-card *ngFor="let product of products$ | async">
         <button class="marker" [ngStyle]="{background: product.color}"></button>
         <h1 [ngStyle]="{color: product.color}">{{product.title | uppercase}}</h1>
         <p>{{product.text}}</p>
         <button mat-raised-button class="product-button" [ngStyle]="{color: product.color}">
           Saiba Mais
         </button>
-
-
       </mat-card>
     </div>
   </section>
