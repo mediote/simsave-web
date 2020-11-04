@@ -8,7 +8,11 @@
     </div>
   </mat-toolbar>
 
-  <div class="banner"></div>
+  <picture >
+    <source media="(max-width: 682px)" srcset="../../../assets/images/BannerMobile.svg">
+    <source media="(min-width: 800px)" srcset="../../../assets/images/banner.svg">
+    <img class="banner" src="../../../assets/images/banner.svg" alt="Chris standing up holding his daughter Elva">
+  </picture>
 
   <section class="cards">
     <div class="card-container">
@@ -19,6 +23,8 @@
         <button mat-raised-button class="product-button" [ngStyle]="{color: product.color}">
           Saiba Mais
         </button>
+
+
       </mat-card>
     </div>
   </section>
