@@ -1,6 +1,5 @@
-import { Component, OnInit, ɵConsole } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
-
 
 @Component({
   selector: 'app-home',
@@ -18,10 +17,8 @@ export class HomeComponent implements OnInit {
   }
 
   list(): void {
-    this.productService.list().subscribe((products: any) => {
+    this.productService.list().subscribe(products => {
       this.products = products;
-      console.log(this.products);
     });
   }
-
 }

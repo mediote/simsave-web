@@ -15,11 +15,11 @@
   height: 50vh;
   background: #1767E5;
 }
-img{
+
+img {
   margin-top: -195px;
   position: fixed;
-
-
+  cursor: pointer;
 }
 
 .form-login {
