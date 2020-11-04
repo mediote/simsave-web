@@ -15,12 +15,12 @@
 
   <section class="cards">
     <div class="card-container">
-      <mat-card *ngFor="let product of products$ | async">
+      <mat-card *ngFor="let product of products">
         <button class="marker" [ngStyle]="{background: product.color}"></button>
         <h1 [ngStyle]="{color: product.color}">{{product.title | uppercase}}</h1>
         <p>{{product.text}}</p>
-        <button mat-raised-button class="product-button" [ngStyle]="{color: product.color}">
-          Saiba Mais
+        <button mat-raised-button class="product-button" [ngStyle]="{color: product.buttonColor}">
+          {{product.buttonText}}
         </button>
       </mat-card>
     </div>

@@ -12,6 +12,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class HomeComponent implements OnInit {
 
   products$: Observable<Product[]>;
+  products: Product[];
 
   constructor(private productService: ProductService) { }
 
@@ -20,7 +21,24 @@ export class HomeComponent implements OnInit {
   }
 
   list(): void {
-    this.products$ = this.productService.list();
+    this.productService.list().subscribe(data => {
+      this.products = data;
+      const buttonProperties = {
+        buttonText: '',
+        buttonColor: ''
+      };
+      this.products.map((products, index) => {
+        Object.assign(buttonProperties, products);
+        if ((products.title === 'Student') || (products.title === 'Specialist')) {
+          buttonProperties.buttonText = 'Em Breve';
+          buttonProperties.buttonColor = '#878787';
+        } else {
+          buttonProperties.buttonText = 'Saiba Mais';
+          buttonProperties.buttonColor = products.color;
+        }
+        this.products[index].buttonColor = buttonProperties.buttonColor;
+        this.products[index].buttonText = buttonProperties.buttonText;
+      });
+    });
   }
-
 }
