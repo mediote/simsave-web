@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
         buttonColor: ''
       };
       this.products.map((products, index) => {
-        Object.assign(buttonProperties, products);
         if ((products.title === 'Student') || (products.title === 'Specialist')) {
           buttonProperties.buttonText = 'Em Breve';
           buttonProperties.buttonColor = '#878787';
