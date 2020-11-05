@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
+
 
 @Component({
   selector: 'app-login',
@@ -7,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+
 
   constructor(private router: Router) { }
 
@@ -16,4 +21,5 @@ export class LoginComponent implements OnInit {
   navigateToHome() {
     this.router.navigate(['home']);
   }
+
 }
